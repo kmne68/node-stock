@@ -1,6 +1,41 @@
-<h1>{{ stock.companyName }} ({{ stock.symbol }})</h1>
 
-</br></br>
+
+<div class="jumbotron">
+    <h1 class="display-4">{{ stock.companyName }} ({{ stock.symbol }})</h1>
+    <p class="lead"><strong>Latest Price: </strong>$ {{ stock.latestPrice }}<br />
+        <strong>Previous Close: </strong>$ {{ stock.previousClose }}<br />
+        <strong>Percent Change: </strong>{{ stock.changePercent }} %<br />
+        <strong>Market Capitalization: </strong>$ {{ stock.marketCap }}<br />
+        <strong>YTD Change: </strong>{{ stock.ytdChange }} %<br />
+        <strong>52wk High: </strong>{{ stock.week52High }}<br />
+        <strong>52wk Low: </strong>{{ stock.week52Low }}<br />
+        <strong>PE Ratio: </strong>{{ stock.peRatio }}<br />
+        <strong>Volume: </strong>{{ stock.volume }} shares<br />
+    </p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+</div>
+
+<h1>{{ stock.companyName }} ({{ stock.symbol }})</h1>
+<br />
+
+
+<strong>Latest Price: </strong>$ {{ stock.latestPrice }}<br />
+<strong>Previous Close: </strong>$ {{ stock.previousClose }}<br />
+<strong>Percent Change: </strong>{{ stock.changePercent }} %<br />
+<strong>Market Capitalization: </strong>$ {{ stock.marketCap }}<br />
+<strong>YTD Change: </strong>{{ stock.ytdChange }} %<br />
+<strong>52wk High: </strong>{{ stock.week52High }}<br />
+<strong>52wk Low: </strong>{{ stock.week52Low }}<br />
+<strong>PE Ratio: </strong>{{ stock.peRatio }}<br />
+<strong>Volume: </strong>{{ stock.volume }} shares<br />
+
+<!-- 
+<br/></br/>
 {{#each stock}}
-    {{@key}} | {{this}}</br>
+    {{@key}} | {{this}}<br/>
 {{/each}}
+-->
