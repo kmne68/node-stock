@@ -29,19 +29,39 @@ function call_api(finishedAPI, ticker) {
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+// TODO
+// 1. make home not display stock data
+// 2. make company page route use api
+// 3. the not having a ticker symbol in the URL in call_api prevents the company route from working.
+
 
 // Index GET route
+
 app.get('/', function (req, res) {
     // use a callback to ensure time for data retrieval
+//    call_api(function(completeAPI) {
+//        res.render('home', {
+//            stock: completeAPI
+//        });
+//    });
+    res.render('home');
+});
+
+
+/*
+// Company GET route
+app.get('/company', function (req, res) {
+    // use a callback to ensure time for data retrieval
     call_api(function(completeAPI) {
-        res.render('home', {
+        res.render('company', {
             stock: completeAPI
         });
     });
 });
-
+*/
 
 // Index POST route
+/*
 app.post('/', function (req, res) {
     // use a callback to ensure time for data retrieval
     call_api(function(completeAPI) {
@@ -52,8 +72,25 @@ app.post('/', function (req, res) {
         });
     }, req.body.stock_ticker);
 });
+*/
 
+// Company route
+app.post('/company', function (req, res) {
+    // use a callback to ensure time for data retrieval
+    call_api(function(completeAPI) {
+        // returned_data = req.body.stock_ticker;
+        res.render('company', {
+            stock: completeAPI,
+        //    returned_data: returned_data
+        });
+    }, req.body.stock_ticker);
+});
 
+/*
+app.get('/company.html', function(req, res) {
+    res.render('company');
+});
+*/
 
 // About page route
 app.get('/about.html', function (req, res) {
